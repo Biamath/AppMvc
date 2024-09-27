@@ -9,6 +9,7 @@ namespace AT_Net_Q8
     {
         public static void Main(string[] args)
         {
+     
             var builder = WebApplication.CreateBuilder(args);
 
             //Configurar o DbContex para configurar o SQLite

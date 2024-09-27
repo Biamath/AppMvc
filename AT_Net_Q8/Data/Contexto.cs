@@ -7,6 +7,6 @@ namespace AT_Net_Q8.Data
     {
 
         public Contexto(DbContextOptions<Contexto> options) : base(options) { }
-        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }
