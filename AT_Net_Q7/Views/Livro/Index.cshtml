@@ -1,0 +1,35 @@
+﻿
+@Model List<AT_Net_Q7.Models.Livro>
+    <h2>Lista de livros </h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+<th>Id</th>
+<th>Titulo</th>
+<th>Autor</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach(var livro in Model)
+            {
+                <tr>
+                    <td>@livro.Id</td>
+                        <td>@livro.Titulo</td>
+                            <td>@livro.Autor</td>
+
+                                 <td>
+                      <a asp-action="Indice" asp-route-id="@livro.Id" class="btn btn-danger">Consultar</a>
+                                    </td>
+                    </tr>
+                        <td>
+                        <a asp-action="Criar" asp-route-id="@livro.Id" class="btn btn-danger">Incluir</a>
+                                    </td>
+                            <td>
+                        <a asp-action="Delete" asp-route-id="@livro.Id" class="btn btn-danger">Excluir</a>
+                            </td>          
+            }
+        </tbody>
+
+    </table>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AT_Net_Q7.Models.Livro>
+
+<h1>Lista de Livros</h1>
+<a asp-action="Create">Adicionar Novo Livro</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var livro in Model)
+        {
+                <tr>
+                    <td>@livro.Titulo</td>
+                    <td>@livro.Autor</td>
+                    
+                        <td>
+                          <a asp-action="Indice" asp-route-id="@livro.Id">Consultar</a>
+                            </td>
+                        <td>
+                            <a asp-action="Criar" asp-route-id="@livro.Id">Incluir</a>
+                        </td>
+                            <td>
+                            <a asp-action="Delete" asp-route-id="@livro.Id">Excluir</a>
+                        </td>
+                </tr>
+        }
+    </tbody>
+</table>
