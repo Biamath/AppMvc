@@ -13,7 +13,7 @@ namespace AT_Net_Q8
             var builder = WebApplication.CreateBuilder(args);
 
             //Configurar o DbContex para configurar o SQLite
-            builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefultConnection")));
+            builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
