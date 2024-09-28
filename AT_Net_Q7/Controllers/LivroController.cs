@@ -1,13 +1,20 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using AT_Net_Q7.Models;
+using AT_Net_Q7.Data;
 
 
 namespace AT_Net_Q7.Controllers
 {
     public class LivroController : Controller
     {
-        public IActionResult Index()
+        Contexto Contexto;
+        public LivroController(Contexto contexto)
+        {
+            this.Contexto = contexto;
+        }
+        
+        public IActionResult Criar (Livro livro)
         {
             var livros = GetProducts();
             return View(livros);

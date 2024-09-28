@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using AT_Net_Q7.Data;
+using SQLitePCL;
 
 
 namespace AT_Net_Q7
@@ -8,10 +9,11 @@ namespace AT_Net_Q7
     {
         public static void Main(string[] args)
         {
+            Batteries.Init();
             var builder = WebApplication.CreateBuilder(args);
 
             //Configurar o DbContex para configurar o SQLite
-            builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefultConnection")));
+            builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
